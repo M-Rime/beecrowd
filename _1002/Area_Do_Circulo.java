@@ -1,6 +1,7 @@
 /* - 1002
  * 
- * A fórmula para calcular a área de uma circunferência é: area = π . raio2. Considerando para este problema que π = 3.14159: 
+ * A fórmula para calcular a área de uma circunferência é: area = π * raio^2. 
+ * Considerando para este problema que π = 3.14159: 
  * Efetue o cálculo da área, elevando o valor de raio ao quadrado e multiplicando por π
  * 
  * Entrada
@@ -23,12 +24,25 @@
 
 package _1002;
 
+import java.util.Scanner;
+
 public class Area_Do_Circulo {
 
     public static void main(String[] args) {
 
+        double pi = 3.14159;
+        double area;
+        float raio;
 
-        System.out.println("Olá, mundo");
+        try (Scanner s = new Scanner(System.in)) {
+
+        raio = s.nextFloat();
+
+        area = pi * raio * raio;
+        
+        }
+
+        System.out.printf("A= %.4f " , area );
 
     }
 
