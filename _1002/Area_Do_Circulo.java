@@ -32,17 +32,17 @@ public class Area_Do_Circulo {
 
         double pi = 3.14159;
         double area;
-        float raio;
+        double raio;
 
         try (Scanner s = new Scanner(System.in)) {
 
-        raio = s.nextFloat();
+        raio = s.nextDouble();
 
-        area = pi * raio * raio;
+       area = pi * Math.pow(raio, 2);;
         
         }
 
-        System.out.printf("A= %.4f " , area );
+        System.out.printf("A=%.4f%n",area );
 
     }
 
