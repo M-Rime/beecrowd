@@ -23,8 +23,8 @@ package _1004;
 
 import java.util.Scanner;
 
-public class Produto_Simples{
-    public static void main(String[] args){
+public class Produto_Simples {
+    public static void main(String[] args) {
 
         try (Scanner s = new Scanner(System.in)) {
             int a = s.nextInt();
@@ -34,11 +34,6 @@ public class Produto_Simples{
             System.out.println("PROD = " + prod);
         }
 
-
-
     }
 
-
-
 }
-

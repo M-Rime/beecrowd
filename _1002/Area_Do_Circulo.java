@@ -21,7 +21,6 @@
  *  
  */
 
-
 package _1002;
 
 import java.util.Scanner;
@@ -36,13 +35,14 @@ public class Area_Do_Circulo {
 
         try (Scanner s = new Scanner(System.in)) {
 
-        raio = s.nextDouble();
+            raio = s.nextDouble();
 
-       area = pi * Math.pow(raio, 2);;
-        
+            area = pi * Math.pow(raio, 2);
+            ;
+
         }
 
-        System.out.printf("A=%.4f%n",area );
+        System.out.printf("A=%.4f%n", area);
 
     }
 

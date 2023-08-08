@@ -12,7 +12,7 @@ package _1001;
 
 import java.util.Scanner;
 
-public class Extremamente_Basico{
+public class Extremamente_Basico {
 
     public static void main(String[] args) {
 

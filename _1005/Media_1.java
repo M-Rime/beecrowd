@@ -19,19 +19,17 @@ package _1005;
 
 import java.util.Scanner;
 
-public class Média_1 {
+public class Media_1 {
 
     public static void main(String[] args) {
 
         try (Scanner sc = new Scanner(System.in)) {
             float a = sc.nextFloat();
             float b = sc.nextFloat();
-            double media = ( (a * 3.5) + (b * 7.5) ) / 11;
+            double media = ((a * 3.5) + (b * 7.5)) / 11;
 
             System.out.printf("MEDIA=%.5f %n", media);
         }
-
-
 
     }
 }
