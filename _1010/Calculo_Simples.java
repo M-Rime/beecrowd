@@ -33,18 +33,19 @@ public class Calculo_Simples {
     public static void main(String[] args) {
 
         try (Scanner sc = new Scanner(System.in)) {
-            int id_Peca;
+            
+            //int id_Peca;
             int numero_Peca;
             double valor_Peca;
             Double total;
 
-            id_Peca = sc.nextInt();
+           // id_Peca = sc.nextInt();
             numero_Peca = sc.nextInt();
             valor_Peca = sc.nextDouble();
 
             total = numero_Peca * valor_Peca;
 
-            id_Peca = sc.nextInt();
+          //  id_Peca = sc.nextInt();
             numero_Peca = sc.nextInt();
             valor_Peca = sc.nextDouble();
 
