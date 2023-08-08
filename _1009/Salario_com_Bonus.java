@@ -27,7 +27,7 @@ public class Salario_com_Bonus{
 
         try (Scanner sc = new Scanner(System.in)) {
             
-            String nomeVendedor = sc.nextLine();
+            //String nomeVendedor = sc.nextLine();
 
             double salario = sc.nextDouble();
             double valorVendas = sc.nextDouble();
