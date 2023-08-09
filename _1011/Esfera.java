@@ -4,7 +4,8 @@
  * 
  *  A fórmula para calcular o volume é: (4/3) * pi * R^3. Considere (atribua) para pi o valor 3.14159.
 
- * Dica: Ao utilizar a fórmula, procure usar (4/3.0) ou (4.0/3), pois algumas linguagens (dentre elas o C++), assumem que o resultado da divisão entre dois inteiros é outro inteiro.
+ * Dica: Ao utilizar a fórmula, procure usar (4/3.0) ou (4.0/3), pois algumas linguagens (dentre elas o C++),
+ * assumem que o resultado da divisão entre dois inteiros é outro inteiro.
  * 
  * Entrada
  * O arquivo de entrada contém um valor de ponto flutuante (dupla precisão), correspondente ao raio da esfera.
@@ -34,9 +35,9 @@ public class Esfera {
             double r = sc.nextDouble();
             double pi = 3.14159;
 
-            double volume = ( (4/3) * pi * Math.pow(r, 3) );
+            double volume = (4 / 3.0 * pi * Math.pow(r, 3));
 
-            System.out.printf("VOLUME = %.3 %n", volume);
+            System.out.printf("VOLUME = %.3f%n", volume);
 
         }
     }
