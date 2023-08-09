@@ -31,27 +31,27 @@ public class O_Maior {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            int maior;
 
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int maior;
+            if (a > b & a > c) {
 
-        if (a > b & a > c) {
+                maior = a;
 
-            maior = a;
+            } else if (b > c) {
 
-        } else if (b > c) {
+                maior = b;
 
-            maior = b;
+            } else {
 
-        } else {
+                maior = c;
+            }
 
-            maior = c;
+            System.out.println(maior + " eh o maior");
         }
-
-        System.out.println(maior + " eh o maior");
     }
 
 }
