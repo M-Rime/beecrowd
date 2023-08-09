@@ -53,6 +53,7 @@ public class Calculo_Simples {
 
             System.out.printf("VALOR A PAGAR: R$ %.2f%n", total);
         }
+        
 
     }
 }
