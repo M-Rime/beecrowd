@@ -23,7 +23,7 @@ public class Soma_Simples {
             int b = s.nextInt();
 
             int soma = a + b;
-
+ 
             System.out.println("SOMA = " + soma);
         }
 

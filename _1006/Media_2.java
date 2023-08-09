@@ -37,6 +37,6 @@ public class Media_2 {
             System.out.printf("MEDIA = %.1f%n", media);
         }
 
-        /* Notas */
+
     }
 }
