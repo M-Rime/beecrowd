@@ -41,7 +41,7 @@ public class Cedulas {
             int nota_De_50;
             int nota_De_100;
 
-            float temp, resto;
+            float resto;
 
             if (valor < 1000000 & valor > 0) {
                 nota_De_100 = valor / 100;
