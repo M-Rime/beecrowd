@@ -79,3 +79,36 @@ public class Cedulas {
 
     }
 }
+
+
+
+/*              < OU >
+ * 
+ * import java.util.Scanner;
+ * 
+ *  public class Cedulas {
+ * 
+ *     public static void main(String[] args) {
+ * 
+ *         try (Scanner sc = new Scanner(System.in)) {
+ *             int valor = sc.nextInt();
+ *             int[] notas = {100, 50, 20, 10, 5, 2, 1};
+ *             int[] quantidadeNotas = new int[notas.length];
+ * 
+ *             if (valor > 0 && valor < 1000000) {
+ *                 for (int i = 0; i < notas.length; i++) {
+ *                     quantidadeNotas[i] = valor / notas[i];
+ *                     valor %= notas[i];
+ *                 }
+ * 
+ *                 System.out.println(valor);
+ *                 for (int i = 0; i < notas.length; i++) {
+ *                     System.out.println(quantidadeNotas[i] + " nota(s) de R$ " + notas[i] + ",00");
+ *                 }
+ *             }
+ *         }
+ *     }
+ * }
+ * 
+ *  
+*/
