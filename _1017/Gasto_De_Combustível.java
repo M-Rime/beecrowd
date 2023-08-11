@@ -19,7 +19,7 @@
  *              10     |    70.833
  *              85     | 
  * 
- *  
+ *------------------------------------------------------  
  * Objetivo: Joãozinho está planejando uma viagem de carro e deseja calcular a quantidade de litros de combustível que ele precisará utilizar durante essa viagem. Ele sabe que o carro faz 12 quilômetros por litro (12 KM/L).
  *   
  *   Dados fornecidos: Para calcular a quantidade de litros necessários, Joãozinho precisa fornecer duas informações:
@@ -28,7 +28,9 @@
  *   Velocidade média durante a viagem (em km/h): Essa é a velocidade média do carro ao longo da viagem.
  *   Cálculo da distância percorrida: Para calcular a distância percorrida, é utilizado o conceito de que distância é igual ao produto do tempo pela velocidade. Ou seja, Distância = Tempo x Velocidade Média.
  *   
- *   Cálculo da quantidade de litros de combustível: Sabendo que o carro faz 12 KM/L, podemos calcular a quantidade de litros de combustível necessários dividindo a distância percorrida pelo consumo do carro. Ou seja, Litros = Distância / Consumo.
+ *   Cálculo da quantidade de litros de combustível: Sabendo que o carro faz 12 KM/L, 
+ *   podemos calcular a quantidade de litros de combustível necessários dividindo a distância percorrida pelo consumo do carro.
+ *   Ou seja, Litros = Distância / Consumo.
  *   
  *   Formato da saída: Joãozinho deseja ver o resultado com três casas decimais após o ponto decimal.
  * 
@@ -45,7 +47,14 @@ public class Gasto_De_Combustível {
 
         try (Scanner sc = new Scanner(System.in)) {
 
+            int tempo = sc.nextInt();
+            int velocidade = sc.nextInt();
+            int consumo = 12;
 
+            double distancia = tempo * velocidade;
+            double litros = distancia / consumo;
+
+            System.out.printf("%.3f", litros);
 
         }
     }
