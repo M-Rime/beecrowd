@@ -27,10 +27,17 @@ public class Conversao_De_Tempo {
 
             double temp = 0;
 
-            horas = (int) entrada / 3600;
+            horas = entrada / 3600;
 
-            minutos = (int) entrada / 60;
-            segundos = (minutos / 60);
+            minutos = ((entrada / 3600) - (int) horas) * 60;
+
+            segundos = (((entrada / 3600) - (int) horas) * 60 - (int) minutos) * 60;
+
+            /* horas = (int) horas;
+            segundos = (int) segundos;
+            minutos = (int) minutos; */
+
+            System.out.printf("%0.f%s%.0f%s%.0f%n", horas, ":", minutos, ":", segundos);
 
             System.out.printf("%f%n", horas);
             System.out.printf("%f%n", minutos);
