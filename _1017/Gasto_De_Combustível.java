@@ -31,10 +31,10 @@
  *   Cálculo da quantidade de litros de combustível: Sabendo que o carro faz 12 KM/L, 
  *   podemos calcular a quantidade de litros de combustível necessários dividindo a distância percorrida pelo consumo do carro.
  *   Ou seja, Litros = Distância / Consumo.
- *   
+ *
  *   Formato da saída: Joãozinho deseja ver o resultado com três casas decimais após o ponto decimal.
- * 
- * 
+ *
+ *
 */
 
 package _1017;

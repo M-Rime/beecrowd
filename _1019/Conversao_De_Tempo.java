@@ -13,13 +13,10 @@
 
 package _1019;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Conversao_De_Tempo {
     public static void main(String[] args) {
-
-        DecimalFormat df = new DecimalFormat("#,###.000");
 
         try (Scanner sc = new Scanner(System.in)) {
 
@@ -30,18 +27,16 @@ public class Conversao_De_Tempo {
 
             double temp = 0;
 
-            horas = entrada / 3600;
-            
-            
+            horas = (int) entrada / 3600;
 
-            minutos = entrada / 60;
+            minutos = (int) entrada / 60;
             segundos = (minutos / 60);
 
             System.out.printf("%f%n", horas);
             System.out.printf("%f%n", minutos);
-            System.out.printf("%fn",segundos);
+            System.out.printf("%f%n", segundos);
 
-            System.out.println("Temp - " + temp);
+            System.out.println("\nTemp - " + temp);
 
         }
 
