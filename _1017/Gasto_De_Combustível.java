@@ -50,6 +50,7 @@ public class Gasto_De_Combustível {
             int tempo = sc.nextInt();
             int velocidade = sc.nextInt();
             int consumo = 12;
+            
 
             double distancia = tempo * velocidade;
             double litros = distancia / consumo;

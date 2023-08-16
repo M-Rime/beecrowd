@@ -25,14 +25,14 @@ public class Idade_Em_Dias {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+            int entrada = sc.nextInt();
+            int ano = entrada / 365;
+            int mes = (entrada % 365) / 30;
+            int dias = (entrada % 365) % 30;
 
-        int entrada = sc.nextInt();
-        int ano = entrada / 365;
-        int mes = (entrada % 365) / 30;
-        int dias = (entrada % 365) % 30;
-
-        System.out.println(ano + " ano(s)\n" + mes + " mes(es)\n" + dias + " dia(s)\n");
+            System.out.println(ano + " ano(s)\n" + mes + " mes(es)\n" + dias + " dia(s)\n");
+        }
 
     }
 
