@@ -25,28 +25,47 @@ public class Conversao_De_Tempo {
             double minutos = 0;
             double segundos = 0;
 
-            double temp = 0;
-
             horas = entrada / 3600;
 
             minutos = ((entrada / 3600) - (int) horas) * 60;
 
             segundos = (((entrada / 3600) - (int) horas) * 60 - (int) minutos) * 60;
 
-            /* horas = (int) horas;
-            segundos = (int) segundos;
-            minutos = (int) minutos; */
+            horas = (int) horas;
+            minutos = (int) minutos;
 
-            System.out.printf("%0.f%s%.0f%s%.0f%n", horas, ":", minutos, ":", segundos);
-
-            System.out.printf("%f%n", horas);
-            System.out.printf("%f%n", minutos);
-            System.out.printf("%f%n", segundos);
-
-            System.out.println("\nTemp - " + temp);
+            System.out.printf("%.0f%s%.0f%s%.0f%n", horas, ":", minutos, ":", segundos);
 
         }
 
     }
 
 }
+
+/*
+ * < OU >
+ * 
+ * import java.util.Scanner;
+ * 
+ * public class Conversao_De_Tempo {
+ * 
+ * public static void main(String[] args) {
+ * Scanner scanner = new Scanner(System.in);
+ * 
+ * // Ler o valor inteiro N
+ * int segundosTotais = scanner.nextInt();
+ * 
+ * // Calcula as horas, minutos e segundos
+ * int horas = segundosTotais / 3600;
+ * int minutos = (segundosTotais % 3600) / 60;
+ * int segundos = segundosTotais % 60;
+ * 
+ * // Imprime o resultado no formato horas:minutos:segundos
+ * System.out.println(horas + ":" + minutos + ":" + segundos);
+ * 
+ * scanner.close();
+ * }
+ * }
+ * 
+ * 
+ */
