@@ -10,14 +10,7 @@
  *       Exemplo de Entrada	  |   Exemplo de Saída
  *                5 6 7 8     | Valores nao aceitos
  *
- *
- * 
- * 
 */
-
-
-
-
 
 package _1035;
 
