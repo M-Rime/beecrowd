@@ -3,7 +3,7 @@
  *        ambos, forem positivos e se a variável A for par escrever a mensagem "Valores aceitos", senão escrever "Valores nao aceitos".
  *   
  *   Entrada 
- *   Quatro números inteiros A, B, C e D.
+ *   Quatro números inteiros A, B, C e D. 
  *   
  *   Saída
  *   Mostre a respectiva mensagem após a validação dos valores.
