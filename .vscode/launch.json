@@ -1,0 +1,175 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Extremamente_Basico",
+            "request": "launch",
+            "mainClass": "_1001.Extremamente_Basico",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Area_Do_Circulo",
+            "request": "launch",
+            "mainClass": "_1002.Area_Do_Circulo",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Soma_Simples",
+            "request": "launch",
+            "mainClass": "_1003.Soma_Simples",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Produto_Simples",
+            "request": "launch",
+            "mainClass": "_1004.Produto_Simples",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Media_1",
+            "request": "launch",
+            "mainClass": "_1005.Media_1",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Media_2",
+            "request": "launch",
+            "mainClass": "_1006.Media_2",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Diferenca",
+            "request": "launch",
+            "mainClass": "_1007.Diferenca",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Salario",
+            "request": "launch",
+            "mainClass": "_1008.Salario",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Salario_com_Bonus",
+            "request": "launch",
+            "mainClass": "_1009.Salario_com_Bonus",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Calculo_Simples",
+            "request": "launch",
+            "mainClass": "_1010.Calculo_Simples",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Esfera",
+            "request": "launch",
+            "mainClass": "_1011.Esfera",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Area",
+            "request": "launch",
+            "mainClass": "_1012.Area",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "O_Maior",
+            "request": "launch",
+            "mainClass": "_1013.O_Maior",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Consumo",
+            "request": "launch",
+            "mainClass": "_1014.Consumo",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Distancia_Entre_Dois_Pontos",
+            "request": "launch",
+            "mainClass": "_1015.Distancia_Entre_Dois_Pontos",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Distancia",
+            "request": "launch",
+            "mainClass": "_1016.Distancia",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Gasto_De_Combustível",
+            "request": "launch",
+            "mainClass": "_1017.Gasto_De_Combustível",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Cedulas",
+            "request": "launch",
+            "mainClass": "_1018.Cedulas",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Conversao_De_Tempo",
+            "request": "launch",
+            "mainClass": "_1019.Conversao_De_Tempo",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Idade_Em_Dias",
+            "request": "launch",
+            "mainClass": "_1020.Idade_Em_Dias",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Notas_E_Moedas",
+            "request": "launch",
+            "mainClass": "_1021.Notas_E_Moedas",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "TDA_Racional",
+            "request": "launch",
+            "mainClass": "_1022.TDA_Racional",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
+            "name": "Teste_De_Seleção_1",
+            "request": "launch",
+            "mainClass": "_1035.Teste_De_Seleção_1",
+            "projectName": "beecrowd_d7c7f1fe"
+        }
+    ]
+}
