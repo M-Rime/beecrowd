@@ -28,6 +28,9 @@
  * A saída consiste em um valor racional, seguido de um sinal de igualdade e outro valor racional, que é a simplificação do primeiro valor. No caso do primeiro valor não poder ser simplificado, o mesmo deve ser repetido após o sinal de igualdade.
  * 
  * Exemplo de Entrada	Exemplo de Saída
+ * 
+ * 
+ * 
  * 4
  * 1 / 2 + 3 / 4    | 10/8 = 5/4
  * 1 / 2 - 3 / 4    |-2/8 = -1/4
@@ -47,9 +50,11 @@ public class TDA_Racional {
 
         try (Scanner sc = new Scanner(System.in)) {
 
-            /*
-             * int numero_De_Casos = sc.nextInt();
-             * String expressao = sc.next();
+            /* 
+               0	1	2	3	4	5	6
+                N1  		D1		N2	D2
+                1	/	2	+	3	/	4
+
              */
 
             String a = "1 / 2 + 3 / 4";
