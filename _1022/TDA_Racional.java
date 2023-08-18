@@ -50,11 +50,11 @@ public class TDA_Racional {
 
         try (Scanner sc = new Scanner(System.in)) {
 
-            /* 
-               0	1	2	3	4	5	6
-                N1  		D1		N2	D2
-                1	/	2	+	3	/	4
-
+            /*
+             * 0 1 2 3 4 5 6
+             * N1 D1 N2 D2
+             * 1 / 2 + 3 / 4
+             * 
              */
 
             String a = "1 / 2 + 3 / 4";
@@ -65,10 +65,29 @@ public class TDA_Racional {
             /* Separando Os Gupos de operaçoes Pelo operador */
             switch (b[3]) {
 
-                case "+":
+                case "+": {
                     operacoes.Soma(b);
 
                     break;
+                }
+
+                case "-": {
+                    operacoes.Diferenca(b);
+
+                    break;
+                }
+
+                case "*": {
+                    operacoes.Produto(b);
+
+                    break;
+                }
+
+                case "/": {
+                    operacoes.Divisão(b);
+
+                    break;
+                }
 
                 default:
                     break;
