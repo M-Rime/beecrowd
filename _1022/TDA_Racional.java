@@ -38,6 +38,40 @@
  * 1 / 2 / 3 / 4    |4/6 = 2/3
  * 
  * 
+ * 
+ * 
+ *                       >>> Algoritmo de Euclides para determinação de MDC – Utilizando Diagramas <<<
+ * 
+ * 
+ *  Podemos indicar as sucessivas divisões do Algoritmo de Euclides de uma maneira mais prática.
+ * Vamos exemplificar como isso pode ser feito, utilizando as divisões obtidas no segundo exemplo.
+ * 
+ * 1320 / 35 = 27 | 35 / 25 = 1 | 25 / 10 = 2 | 10 / 5 = 2
+ * r : 25         | r : 10      | r : 5       | r : 0
+ * Essas divisões podem ser indicadas, utilizando-se um diagrama semelhante a um “Jogo da Velha ampliado”.
+ * Veja:
+ * 
+ *   37  | 1 | 2 | 2 |
+ * ----------------------
+ *   1320| 35| 25| 10| 5
+ * ----------------------
+ *   25  |10 | 5 | 0 |	
+ * 
+ * Observe que:
+ * 
+ * - Na primeira linha do diagrama, aparecem os quocientes das divisões efetuadas;
+ * - Na segunda linha do diagrama, aparecem os divisores e dividendos das divisões efetuadas;
+ * - Na terceira linha do diagrama, aparecem os restos das divisões efetuadas.
+ * - Pelo diagrama fica fácil de perceber que o MDC dos dois números em questão é o último resto não nulo do processo das divisões sucessivas.
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
 */
 
 package _1022;
