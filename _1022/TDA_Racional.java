@@ -46,16 +46,20 @@
  *  Podemos indicar as sucessivas divisões do Algoritmo de Euclides de uma maneira mais prática.
  * Vamos exemplificar como isso pode ser feito, utilizando as divisões obtidas no segundo exemplo.
  * 
- * 1320 / 35 = 27 | 35 / 25 = 1 | 25 / 10 = 2 | 10 / 5 = 2
+ * Dividendo/Divisor = Quociente(Resultado)
+ * Resto 
+ *     
+ * 1320 / 35 = 37 | 35 / 25 = 1 | 25 / 10 = 2 | 10 / 5 = 2
  * r : 25         | r : 10      | r : 5       | r : 0
+ * 
  * Essas divisões podem ser indicadas, utilizando-se um diagrama semelhante a um “Jogo da Velha ampliado”.
  * Veja:
  * 
- *   37  | 1 | 2 | 2 |
+ *   37  | 1 | 2 | 2 |   ----> Cociente
  * ----------------------
- *   1320| 35| 25| 10| 5
+ *   1320| 35| 25| 10| 5   -----> MDC      
  * ----------------------
- *   25  |10 | 5 | 0 |	
+ *   25  |10 | 5 | 0 |	    --------> Resto
  * 
  * Observe que:
  * 
@@ -63,14 +67,6 @@
  * - Na segunda linha do diagrama, aparecem os divisores e dividendos das divisões efetuadas;
  * - Na terceira linha do diagrama, aparecem os restos das divisões efetuadas.
  * - Pelo diagrama fica fácil de perceber que o MDC dos dois números em questão é o último resto não nulo do processo das divisões sucessivas.
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
  * 
 */
 
@@ -102,7 +98,8 @@ public class TDA_Racional {
                 case "+": {
 
                     operacoes.Soma(b);
-
+                    int resposta = operacoes.mdc(1320, 35);
+                    System.out.println(resposta);
                     break;
                 }
 
@@ -137,60 +134,91 @@ public class TDA_Racional {
 
     }
 
-    static class Operacoes {
+}
 
-        public String Soma(String[] x) {
-            /* Soma: (N1*D2 + N2*D1) / (D1*D2) */
+class Operacoes {
 
-            int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
-                    + Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
+    public String Soma(String[] x) {
+        /* Soma: (N1*D2 + N2*D1) / (D1*D2) */
 
-            int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
+        int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
+                + Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
 
-            System.out.println(part_1 + "/" + part_2);
+        int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
 
-            return "";
-        }
+        System.out.println(part_1 + "/" + part_2);
 
-        public String Diferenca(String[] x) {
-            /* Subtração: (N1*D2 - N2*D1) / (D1*D2) */
-
-            int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
-                    - Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
-
-            int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
-
-            System.out.println(part_1 + "/" + part_2);
-            return "";
-        }
-
-        public String Produto(String[] x) {
-            /* Multiplicação: (N1*N2) / (D1*D2) */
-
-            int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[4]);
-
-            int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
-
-            System.out.println(part_1 + "/" + part_2);
-            return "";
-        }
-
-        public String Divisão(String[] x) {
-            /* Divisão: (N1/D1) / (N2/D2), ou seja (N1*D2)/(N2*D1) */
-
-            int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6]);
-
-            int part_2 = Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
-
-            System.out.println(part_1 + "/" + part_2);
-
-            return "";
-        }
-
+        return "";
     }
 
-    static class MDC {
-        /* ... */
+    public String Diferenca(String[] x) {
+        /* Subtração: (N1*D2 - N2*D1) / (D1*D2) */
+
+        int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
+                - Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
+
+        int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
+
+        System.out.println(part_1 + "/" + part_2);
+        return "";
+    }
+
+    public String Produto(String[] x) {
+        /* Multiplicação: (N1*N2) / (D1*D2) */
+
+        int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[4]);
+
+        int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
+
+        System.out.println(part_1 + "/" + part_2);
+        return "";
+    }
+
+    public String Divisão(String[] x) {
+        /* Divisão: (N1/D1) / (N2/D2), ou seja (N1*D2)/(N2*D1) */
+
+        int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6]);
+
+        int part_2 = Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
+
+        System.out.println(part_1 + "/" + part_2);
+
+        return "";
+    }
+
+    public int mdc(int dividendo, int divisor) {
+        /*
+         * Dividendo/Divisor = Quociente(Resultado)
+         * Resto
+         */
+
+        int temp;
+
+        if (dividendo > 0 && divisor > 0) {
+            
+
+            if (dividendo < divisor) {
+
+                temp = dividendo;
+                dividendo = divisor;
+                divisor = temp;
+
+                mdc(dividendo, divisor);
+
+            } else {
+
+                int resto = dividendo % divisor;
+
+                if (resto == 0) {
+
+                    return divisor;
+                } else {
+                    mdc(divisor, resto);
+                }
+
+            }
+        }
+        return 0;
     }
 
 }
