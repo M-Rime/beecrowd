@@ -195,12 +195,14 @@ class Operacoes {
         int temp;
 
         if (dividendo > 0 && divisor > 0) {
-            
+
 
             if (dividendo < divisor) {
 
                 temp = dividendo;
+
                 dividendo = divisor;
+                
                 divisor = temp;
 
                 mdc(dividendo, divisor);
