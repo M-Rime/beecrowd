@@ -66,24 +66,28 @@ public class TDA_Racional {
             switch (b[3]) {
 
                 case "+": {
+
                     operacoes.Soma(b);
 
                     break;
                 }
 
                 case "-": {
+
                     operacoes.Diferenca(b);
 
                     break;
                 }
 
                 case "*": {
+
                     operacoes.Produto(b);
 
                     break;
                 }
 
                 case "/": {
+
                     operacoes.Divisão(b);
 
                     break;
@@ -149,6 +153,10 @@ public class TDA_Racional {
             return "";
         }
 
+    }
+
+    static class MDC {
+        /* ... */
     }
 
 }
