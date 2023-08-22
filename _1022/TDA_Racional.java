@@ -72,7 +72,6 @@
 
 package _1022;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TDA_Racional {
@@ -80,55 +79,58 @@ public class TDA_Racional {
 
         try (Scanner sc = new Scanner(System.in)) {
 
-            /*
-             * 0 1 2 3 4 5 6
-             * N1 D1 N2 D2
-             * 1 / 2 + 3 / 4
-             * 
-             */
+            int entrada = sc.nextInt();
+            int i = 0;
 
-            String a = "1 / 2 + 3 / 4";
+            while (i < entrada) {
 
-            String[] b = a.split(" ");
-            Operacoes operacoes = new Operacoes();
+                String a = sc.nextLine();
 
-            /* Separando Os Gupos de operaçoes Pelo operador */
-            switch (b[3]) {
+                String[] b = a.split(" ");
 
-                case "+": {
+                Operacoes operacoes = new Operacoes();
 
-                    operacoes.Soma(b);
-                    int resposta = operacoes.mdc(1320, 35);
-                    System.out.println(resposta);
-                    break;
+                /* Separando Os Gupos de operaçoes Pelo operador */
+                switch (b[3]) {
+
+                    case "+": {
+
+                        operacoes.Soma(b);
+                        String resposta = operacoes.Soma(b);
+                        System.out.println(resposta);
+                        break;
+                    }
+
+                    case "-": {
+
+                        String resposta = operacoes.Diferenca(b);
+                        System.out.println(resposta);
+
+                        break;
+                    }
+
+                    case "*": {
+
+                        String resposta = operacoes.Produto(b);
+                        System.out.println(resposta);
+
+                        break;
+                    }
+
+                    case "/": {
+
+                        String resposta = operacoes.Divisão(b);
+                        System.out.println(resposta);
+
+                        break;
+                    }
+
+                    default:
+                        break;
                 }
 
-                case "-": {
-
-                    operacoes.Diferenca(b);
-
-                    break;
-                }
-
-                case "*": {
-
-                    operacoes.Produto(b);
-
-                    break;
-                }
-
-                case "/": {
-
-                    operacoes.Divisão(b);
-
-                    break;
-                }
-
-                default:
-                    break;
+                i++;
             }
-
-            System.out.println(Arrays.toString(b));
 
         }
 
@@ -141,14 +143,15 @@ class Operacoes {
     public String Soma(String[] x) {
         /* Soma: (N1*D2 + N2*D1) / (D1*D2) */
 
-        int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
+        int part_1;
+        part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
                 + Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
 
         int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
 
-        System.out.println(part_1 + "/" + part_2);
+        int a = mdc(part_1, part_2);
 
-        return "";
+        return part_1 / a + "/" + part_2 / a;
     }
 
     public String Diferenca(String[] x) {
@@ -160,7 +163,9 @@ class Operacoes {
         int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
 
         System.out.println(part_1 + "/" + part_2);
-        return "";
+        int a = mdc(part_1, part_2);
+
+        return part_1 / a + "/" + part_2 / a;
     }
 
     public String Produto(String[] x) {
@@ -170,8 +175,9 @@ class Operacoes {
 
         int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
 
-        System.out.println(part_1 + "/" + part_2);
-        return "";
+        int a = mdc(part_1, part_2);
+
+        return part_1 / a + "/" + part_2 / a;
     }
 
     public String Divisão(String[] x) {
@@ -181,45 +187,27 @@ class Operacoes {
 
         int part_2 = Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
 
-        System.out.println(part_1 + "/" + part_2);
+        int a = mdc(part_1, part_2);
 
-        return "";
+        return part_1 / a + "/" + part_2 / a;
     }
 
     public int mdc(int dividendo, int divisor) {
-        /*
-         * Dividendo/Divisor = Quociente(Resultado)
-         * Resto
-         */
 
-        int temp;
+        int r = 1;
+        while (r != 0) {
 
-        if (dividendo > 0 && divisor > 0) {
+            r = dividendo % divisor;
 
+            if (r == 0) {
 
-            if (dividendo < divisor) {
-
-                temp = dividendo;
-
-                dividendo = divisor;
-                
-                divisor = temp;
-
-                mdc(dividendo, divisor);
-
+                return divisor;
             } else {
-
-                int resto = dividendo % divisor;
-
-                if (resto == 0) {
-
-                    return divisor;
-                } else {
-                    mdc(divisor, resto);
-                }
-
+                dividendo = divisor;
+                divisor = r;
             }
         }
+
         return 0;
     }
 
