@@ -26,32 +26,34 @@ import java.util.Scanner;
 public class Fórmula_De_Bhaskara {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+            float a = sc.nextFloat();
+            float b = sc.nextFloat();
+            float c = sc.nextFloat();
+            double x1 = 0;
+            double x2 = 0;
+            double delta = Math.pow(b, 2) - (4 * a * c);
+            double raizDelta = Math.sqrt(delta);
 
-        float a = sc.nextFloat();
-        float b = sc.nextFloat();
-        float c = sc.nextFloat();
-        double x1 = 0;
-        double x2 = 0;
-        double delta = Math.pow(b, 2) - (4 * a * c);
-        double raizDelta = Math.sqrt(delta);
+            if (delta <= 0) {
+                System.out.println("Impossivel calcular");
+            } else {
 
-        if (delta <= 0) {
-            System.out.println("Impossivel calcular");
-        } else {
+                System.out.println("-b :" + -(b));
+                System.out.println("Rais de Delta :" + raizDelta);
+                System.out.println("2 * a : " + 2 * a);
 
-            System.out.println("-b :" + -(b));
-            System.out.println("Rais de Delta :" + raizDelta);
-            System.out.println("2 * a : " + 2 * a);
+                b = b * -1;
+                x1 = (b + raizDelta) / (2 * a);
 
-            b = b * -1;
-            x1 = (b + raizDelta) / (2 * a);
-            x2 = (b - raizDelta) / (2 * a);
+                x2 = (b - raizDelta) / (2 * a);
 
+            }
+
+            System.out.printf("%.5f R1 = ", x2);
+
+            System.out.printf("%.5f R1 = ", x1);
         }
-
-        System.out.printf("%.5f%n R1 = ", x1);
-        System.out.printf("%.5f%n R2 = ", x2);
 
     }
 }
