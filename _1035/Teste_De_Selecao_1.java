@@ -22,7 +22,7 @@ package _1035;
 
 import java.util.Scanner;
 
-public class Teste_De_Seleção_1 {
+public class Teste_De_Selecao_1 {
 
     public static void main(String[] args) {
 

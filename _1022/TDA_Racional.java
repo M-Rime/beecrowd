@@ -77,65 +77,65 @@ import java.util.Scanner;
 public class TDA_Racional {
     public static void main(String[] args) {
 
-        try (Scanner sc = new Scanner(System.in)) {
+        Scanner entrada_2 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-            int entrada = sc.nextInt();
-            int i = 0;
+        String[] b = new String[7];
+        String a;
+        int entrada = sc.nextInt();
+        int i = 0;
 
-            while (i < entrada) {
+        while (i < entrada) {
 
-                String a = sc.nextLine();
+            a = entrada_2.nextLine();
+            b = a.split(" ");
+            String c = b[3];
 
-                String[] b = a.split(" ");
+            Operacoes operacoes = new Operacoes();
 
-                Operacoes operacoes = new Operacoes();
+            /* Separando Os Gupos de operaçoes Pelo operador */
+            switch (c) {
 
-                /* Separando Os Gupos de operaçoes Pelo operador */
-                switch (b[3]) {
+                case "+": {
 
-                    case "+": {
-
-                        operacoes.Soma(b);
-                        String resposta = operacoes.Soma(b);
-                        System.out.println(resposta);
-                        break;
-                    }
-
-                    case "-": {
-
-                        String resposta = operacoes.Diferenca(b);
-                        System.out.println(resposta);
-
-                        break;
-                    }
-
-                    case "*": {
-
-                        String resposta = operacoes.Produto(b);
-                        System.out.println(resposta);
-
-                        break;
-                    }
-
-                    case "/": {
-
-                        String resposta = operacoes.Divisão(b);
-                        System.out.println(resposta);
-
-                        break;
-                    }
-
-                    default:
-                        break;
+                    operacoes.Soma(b);
+                    String resposta = operacoes.Soma(b);
+                    System.out.println(resposta);
+                    break;
                 }
 
-                i++;
+                case "-": {
+
+                    String resposta = operacoes.Diferenca(b);
+                    System.out.println(resposta);
+
+                    break;
+                }
+
+                case "*": {
+
+                    String resposta = operacoes.Produto(b);
+                    System.out.println(resposta);
+
+                    break;
+                }
+
+                case "/": {
+
+                    String resposta = operacoes.Divisão(b);
+                    System.out.println(resposta);
+
+                    break;
+                }
+
+                default:
+                    break;
             }
 
+            i++;
         }
 
     }
-
 }
 
 class Operacoes {
@@ -143,8 +143,7 @@ class Operacoes {
     public String Soma(String[] x) {
         /* Soma: (N1*D2 + N2*D1) / (D1*D2) */
 
-        int part_1;
-        part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
+        int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
                 + Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
 
         int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
@@ -155,17 +154,26 @@ class Operacoes {
     }
 
     public String Diferenca(String[] x) {
+
+        // 1 / 2 - 3 / 4
         /* Subtração: (N1*D2 - N2*D1) / (D1*D2) */
 
         int part_1 = Integer.parseInt(x[0]) * Integer.parseInt(x[6])
                 - Integer.parseInt(x[4]) * Integer.parseInt(x[2]);
 
+        System.out.println("P1 - " + part_1);
+
         int part_2 = Integer.parseInt(x[2]) * Integer.parseInt(x[6]);
 
+        System.out.println("P2 - " + part_2);
+
         System.out.println(part_1 + "/" + part_2);
+
         int a = mdc(part_1, part_2);
 
-        return part_1 / a + "/" + part_2 / a;
+        System.out.println("R- " + a);
+
+        return (part_1 / a) * -1 + "/" + (part_2 / a) * -1;
     }
 
     public String Produto(String[] x) {
