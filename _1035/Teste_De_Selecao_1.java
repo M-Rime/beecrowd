@@ -32,6 +32,7 @@ public class Teste_De_Selecao_1 {
             int b = sc.nextInt();
             int c = sc.nextInt();
             int d = sc.nextInt();
+            
 
             if (b > c & d > a) {
 
