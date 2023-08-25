@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Coordenadas_De_Um_Ponto",
+            "request": "launch",
+            "mainClass": "_1041.Coordenadas_De_Um_Ponto",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
             "name": "Média_3",
             "request": "launch",
             "mainClass": "_1040.Média_3",
