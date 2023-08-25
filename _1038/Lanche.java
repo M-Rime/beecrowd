@@ -25,10 +25,49 @@
  * 
 */
 
-
-
 package _1038;
 
+import java.util.Scanner;
+
 public class Lanche {
-    
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+
+            int id_Produto = sc.nextInt();
+            int quantidade_Produto = sc.nextInt();
+
+            double id_1 = 4;
+            double id_2 = 4.50;
+            double id_3 = 5;
+            double id_4 = 2;
+            double id_5 = 1.5;
+
+            switch (id_Produto) {
+                case 1: {
+                    System.out.printf("Total: R$ %.2f%n", (id_1 * quantidade_Produto));
+                    break;
+                }
+                case 2: {
+                    System.out.printf("Total: R$ %.2f%n", (id_2 * quantidade_Produto));
+                    break;
+                }
+                case 3: {
+                    System.out.printf("Total: R$ %.2f%n", (id_3 * quantidade_Produto));
+                    break;
+                }
+                case 4: {
+                    System.out.printf("Total: R$ %.2f%n", (id_4 * quantidade_Produto));
+                    break;
+                }
+                case 5: {
+                    System.out.printf("Total: R$ %.2f%n", (id_5 * quantidade_Produto));
+                    break;
+                }
+
+                default:
+                    break;
+            }
+
+        }
+    }
 }

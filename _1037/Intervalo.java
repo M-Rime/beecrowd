@@ -31,24 +31,24 @@ import java.util.Scanner;
 public class Intervalo {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+            double valor_Q = sc.nextDouble();
 
-        double valor_Q = sc.nextDouble();
+            if (valor_Q >= 0 && valor_Q <= 25) {
+                System.out.println("Intervalo [0,25]");
 
-        if (valor_Q >= 0 && valor_Q <= 25) {
-            System.out.println("Intervalo [0,25]");
+            } else if (valor_Q > 25 && valor_Q <= 50) {
+                System.out.println("Intervalo (25,50]");
 
-        } else if (valor_Q > 25 && valor_Q <= 50) {
-            System.out.println("Intervalo (25,50]");
+            } else if (valor_Q > 50 && valor_Q <= 75) {
+                System.out.println("Intervalo (50,70]");
 
-        } else if (valor_Q > 50 && valor_Q <= 75) {
-            System.out.println("Intervalo (50,70]");
+            } else if (valor_Q > 75 && valor_Q <= 100) {
+                System.out.println("Intervalo (75,100]");
 
-        } else if (valor_Q > 75 && valor_Q <= 100) {
-            System.out.println("Intervalo (75,100]");
-
-        } else {
-            System.out.println("Fora de intervalo");
+            } else {
+                System.out.println("Fora de intervalo");
+            }
         }
 
     }

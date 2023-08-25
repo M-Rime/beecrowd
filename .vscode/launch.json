@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Lanche",
+            "request": "launch",
+            "mainClass": "_1038.Lanche",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
             "name": "Intervalo",
             "request": "launch",
             "mainClass": "_1037.Intervalo",
