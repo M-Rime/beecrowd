@@ -23,36 +23,32 @@ package _1036;
 
 import java.util.Scanner;
 
-public class Fórmula_De_Bhaskara {
+public class Formula_De_Bhaskara {
 
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
-            float a = sc.nextFloat();
-            float b = sc.nextFloat();
-            float c = sc.nextFloat();
+            double a = sc.nextDouble();
+            double b = sc.nextDouble();
+            double c = sc.nextDouble();
             double x1 = 0;
             double x2 = 0;
             double delta = Math.pow(b, 2) - (4 * a * c);
             double raizDelta = Math.sqrt(delta);
 
-            if (delta <= 0) {
+            if (delta <= 0 || a == 0) {
                 System.out.println("Impossivel calcular");
             } else {
-
-                System.out.println("-b :" + -(b));
-                System.out.println("Rais de Delta :" + raizDelta);
-                System.out.println("2 * a : " + 2 * a);
 
                 b = b * -1;
                 x1 = (b + raizDelta) / (2 * a);
 
                 x2 = (b - raizDelta) / (2 * a);
 
+                System.out.printf("R1 = %.5f\n", x1);
+                System.out.printf("R2 = %.5f%n", x2);
+
             }
 
-            System.out.printf("%.5f R1 = ", x2);
-
-            System.out.printf("%.5f R1 = ", x1);
         }
 
     }

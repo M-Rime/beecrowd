@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Formula_De_Bhaskara",
+            "request": "launch",
+            "mainClass": "_1036.Formula_De_Bhaskara",
+            "projectName": "beecrowd_d7c7f1fe"
+        },
+        {
+            "type": "java",
             "name": "Fórmula_De_Bhaskara",
             "request": "launch",
             "mainClass": "_1036.Fórmula_De_Bhaskara",
