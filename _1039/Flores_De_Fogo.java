@@ -37,7 +37,15 @@
 
 
 package _1039;
+import java.util.Scanner;
 
 public class Flores_De_Fogo {
     
+    public static void main(String[] args) {
+
+        try (Scanner sc = new Scanner(System.in)) {
+
+            System.out.println("Olá Mundo");
+    }
+}
 }
