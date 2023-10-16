@@ -35,17 +35,42 @@
 *    
 */
 
-
 package _1039;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Flores_De_Fogo {
-    
+
     public static void main(String[] args) {
 
         try (Scanner sc = new Scanner(System.in)) {
 
-            System.out.println("Olá Mundo");
+            String[] b = new String[6];
+            String entrada = sc.nextLine();
+            double distancia;
+            b = entrada.split(" ");
+
+            int R1 = Integer.parseInt(b[0]);
+            int x1 = Integer.parseInt(b[1]);
+            int y1 = Integer.parseInt(b[2]);
+
+            int R2 = Integer.parseInt(b[3]);
+            int x2 = Integer.parseInt(b[4]);
+            int y2 = Integer.parseInt(b[5]);
+
+            distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) );
+
+            System.out.println(Arrays.toString(b));
+            System.out.println("\nR1 : " + R1
+                    + "\nX1 : " + x1
+                    + "\nY1 : " + y1
+                    + "\n\nR2 : " + R2
+                    + "\nX2 : " + x2
+                    + "\nY2 : " + y2);
+
+            System.out.println(distancia);
+
+        }
     }
-}
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Flores_De_Fogo",
+            "request": "launch",
+            "mainClass": "_1039.Flores_De_Fogo",
+            "projectName": "beecrowd_14b944a4"
+        },
+        {
+            "type": "java",
             "name": "Sort_Simples",
             "request": "launch",
             "mainClass": "_1042.Sort_Simples",
