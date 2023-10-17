@@ -35,6 +35,29 @@
 *    
 */
 
+/* 
+ *   1 - Círculos e seus Centros:
+ *          Um círculo é definido por seu centro (coordenadas X e Y) e seu raio (R).
+ *          O centro é o ponto central do círculo, e o raio é a distância do centro a qualquer ponto da circunferência.
+ *   
+ *  2 - Distância entre os Centros:
+ *          A fórmula da distância entre dois pontos é usada para calcular a distância entre os centros dos dois círculos. Isso nos dá a distância entre os dois círculos.
+ *   
+ *  3 - Comparação de Raios:
+ *          Para verificar se um círculo está completamente contido em outro, é fundamental comparar os raios dos círculos e a distância entre seus centros.
+ *   Se a distância entre os centros for menor que a diferença entre os raios, isso significa que o círculo interno cabe completamente no círculo externo.
+ *   
+ * 4 - Justificativa:  
+ *          Quando a distância entre os centros é menor que a diferença entre os raios, significa que não há sobreposição entre os dois círculos.
+ *          O círculo menor pode ser colocado dentro do círculo maior sem tocar na borda do círculo maior.
+ *   
+ *      Em resumo, essa fórmula é uma maneira matemática de verificar se um círculo está inteiramente contido dentro de outro,
+ *          levando em consideração o centro e o raio de cada círculo. Se a condição for atendida, o círculo menor está completamente dentro do círculo maior; 
+ *          caso contrário, há sobreposição ou o círculo menor não está contido.
+ *          Isso é útil em várias aplicações da geometria e é amplamente utilizado para determinar relações espaciais entre objetos circulares.
+ * 
+ */
+
 package _1039;
 
 import java.util.Arrays;
