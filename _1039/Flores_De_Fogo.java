@@ -36,26 +36,14 @@
 */
 
 /* 
- *   1 - Círculos e seus Centros:
- *          Um círculo é definido por seu centro (coordenadas X e Y) e seu raio (R).
- *          O centro é o ponto central do círculo, e o raio é a distância do centro a qualquer ponto da circunferência.
- *   
- *  2 - Distância entre os Centros:
- *          A fórmula da distância entre dois pontos é usada para calcular a distância entre os centros dos dois círculos. Isso nos dá a distância entre os dois círculos.
- *   
- *  3 - Comparação de Raios:
- *          Para verificar se um círculo está completamente contido em outro, é fundamental comparar os raios dos círculos e a distância entre seus centros.
- *   Se a distância entre os centros for menor que a diferença entre os raios, isso significa que o círculo interno cabe completamente no círculo externo.
- *   
- * 4 - Justificativa:  
- *          Quando a distância entre os centros é menor que a diferença entre os raios, significa que não há sobreposição entre os dois círculos.
- *          O círculo menor pode ser colocado dentro do círculo maior sem tocar na borda do círculo maior.
- *   
- *      Em resumo, essa fórmula é uma maneira matemática de verificar se um círculo está inteiramente contido dentro de outro,
- *          levando em consideração o centro e o raio de cada círculo. Se a condição for atendida, o círculo menor está completamente dentro do círculo maior; 
- *          caso contrário, há sobreposição ou o círculo menor não está contido.
- *          Isso é útil em várias aplicações da geometria e é amplamente utilizado para determinar relações espaciais entre objetos circulares.
+ *   1- Círculo Menor Completamente Dentro do Círculo Maior (Sem Toque): *
+ *          Nesse caso, a soma da distância entre os centros e o raio do círculo menor é menor do que o raio do círculo maior.
  * 
+ *   2 - Círculo Menor Completamente Dentro do Círculo Maior (Tocando a Circunferência):
+ *          Nesse caso, a soma da distância entre os centros e o raio do círculo menor é igual ao raio do círculo maior. 
+ * 
+ *   3 - Círculo Menor Não Está Completamente Dentro do Círculo Maior:
+ *          Nesse caso, a soma da distância entre os centros e o raio do círculo menor é maior do que o raio do círculo maior.
  */
 
 package _1039;
@@ -71,28 +59,34 @@ public class Flores_De_Fogo {
 
             String[] b = new String[6];
             String entrada = sc.nextLine();
-            double distancia;
+            float distancia;
             b = entrada.split(" ");
 
-            int R1 = Integer.parseInt(b[0]);
+            int casador_R1 = Integer.parseInt(b[0]);
             int x1 = Integer.parseInt(b[1]);
             int y1 = Integer.parseInt(b[2]);
 
-            int R2 = Integer.parseInt(b[3]);
+            int flor_R2 = Integer.parseInt(b[3]);
             int x2 = Integer.parseInt(b[4]);
             int y2 = Integer.parseInt(b[5]);
 
-            distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) );
+            distancia = (float) Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+            if(distancia + flor_R2 <= casador_R1){
+                System.out.println("RICO");
+            }else{
+                System.out.println("MORTO");
+            }
 
             System.out.println(Arrays.toString(b));
-            System.out.println("\nR1 : " + R1
+            System.out.println("\nR1 : " + casador_R1
                     + "\nX1 : " + x1
                     + "\nY1 : " + y1
-                    + "\n\nR2 : " + R2
+                    + "\n\nR2 : " + flor_R2
                     + "\nX2 : " + x2
                     + "\nY2 : " + y2);
 
-            System.out.println(distancia);
+            System.out.println("\n" + distancia);
 
         }
     }

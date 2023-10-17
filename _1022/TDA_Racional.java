@@ -77,62 +77,63 @@ import java.util.Scanner;
 public class TDA_Racional {
     public static void main(String[] args) {
 
-        Scanner entrada_2 = new Scanner(System.in);
-        Scanner sc = new Scanner(System.in);
+        try (Scanner entrada_2 = new Scanner(System.in)) {
+            try (Scanner sc = new Scanner(System.in)) {
+                String[] b = new String[7];
+                String a;
+                int entrada = sc.nextInt();
+                int i = 0;
 
-        String[] b = new String[7];
-        String a;
-        int entrada = sc.nextInt();
-        int i = 0;
+                while (i < entrada) {
 
-        while (i < entrada) {
+                    a = entrada_2.nextLine();
+                    b = a.split(" ");
+                    String c = b[3];
 
-            a = entrada_2.nextLine();
-            b = a.split(" ");
-            String c = b[3];
+                    Operacoes operacoes = new Operacoes();
 
-            Operacoes operacoes = new Operacoes();
+                    /* Separando Os Gupos de operaçoes Pelo operador */
+                    switch (c) {
 
-            /* Separando Os Gupos de operaçoes Pelo operador */
-            switch (c) {
+                        case "+": {
 
-                case "+": {
+                            operacoes.Soma(b);
+                            String resposta = operacoes.Soma(b);
+                            System.out.println(resposta);
+                            break;
+                        }
 
-                    operacoes.Soma(b);
-                    String resposta = operacoes.Soma(b);
-                    System.out.println(resposta);
-                    break;
+                        case "-": {
+
+                            String resposta = operacoes.Diferenca(b);
+                            System.out.println(resposta);
+
+                            break;
+                        }
+
+                        case "*": {
+
+                            String resposta = operacoes.Produto(b);
+                            System.out.println(resposta);
+
+                            break;
+                        }
+
+                        case "/": {
+
+                            String resposta = operacoes.Divisão(b);
+                            System.out.println(resposta);
+
+                            break;
+                        }
+
+                        default:
+                            break;
+                    }
+
+                    i++;
                 }
-
-                case "-": {
-
-                    String resposta = operacoes.Diferenca(b);
-                    System.out.println(resposta);
-
-                    break;
-                }
-
-                case "*": {
-
-                    String resposta = operacoes.Produto(b);
-                    System.out.println(resposta);
-
-                    break;
-                }
-
-                case "/": {
-
-                    String resposta = operacoes.Divisão(b);
-                    System.out.println(resposta);
-
-                    break;
-                }
-
-                default:
-                    break;
             }
-
-            i++;
         }
 
     }
