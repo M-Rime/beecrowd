@@ -48,7 +48,6 @@
 
 package _1039;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Flores_De_Fogo {
@@ -57,36 +56,30 @@ public class Flores_De_Fogo {
 
         try (Scanner sc = new Scanner(System.in)) {
 
-            String[] b = new String[6];
-            String entrada = sc.nextLine();
             float distancia;
-            b = entrada.split(" ");
 
-            int casador_R1 = Integer.parseInt(b[0]);
-            int x1 = Integer.parseInt(b[1]);
-            int y1 = Integer.parseInt(b[2]);
+            while (sc.hasNext()) {
 
-            int flor_R2 = Integer.parseInt(b[3]);
-            int x2 = Integer.parseInt(b[4]);
-            int y2 = Integer.parseInt(b[5]);
+                int cacador_R1 = sc.nextInt();
+                int cacador_x1 = sc.nextInt();
+                int cacador_y1 = sc.nextInt();
 
-            distancia = (float) Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                int flor_R2 = sc.nextInt();
+                int flor_x2 = sc.nextInt();
+                int flor_y2 = sc.nextInt();
 
-            if(distancia + flor_R2 <= casador_R1){
-                System.out.println("RICO");
-            }else{
-                System.out.println("MORTO");
+                distancia = (float) Math.sqrt(Math.pow(flor_x2 - cacador_x1, 2) + Math.pow(flor_y2 - cacador_y1, 2));
+
+                if (distancia + flor_R2 <= cacador_R1) {
+
+                    System.out.println("RICO");
+                } else {
+                    System.out.println("MORTO");
+                }
+
+                //System.out.println(distancia + flor_R2 <= cacador_R1 ? "RICO" : "MORTO");
+
             }
-
-            System.out.println(Arrays.toString(b));
-            System.out.println("\nR1 : " + casador_R1
-                    + "\nX1 : " + x1
-                    + "\nY1 : " + y1
-                    + "\n\nR2 : " + flor_R2
-                    + "\nX2 : " + x2
-                    + "\nY2 : " + y2);
-
-            System.out.println("\n" + distancia);
 
         }
     }
