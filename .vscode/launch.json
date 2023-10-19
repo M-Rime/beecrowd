@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TDA_Racional",
+            "request": "launch",
+            "mainClass": "_1022.TDA_Racional",
+            "projectName": "beecrowd_14b944a4"
+        },
+        {
+            "type": "java",
             "name": "Flores_De_Fogo",
             "request": "launch",
             "mainClass": "_1039.Flores_De_Fogo",
