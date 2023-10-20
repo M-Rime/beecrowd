@@ -72,25 +72,86 @@
 
 package _1022;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TDA_Racional {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        Scanner sc2 = new Scanner(System.in);
 
         int numeroDeinteracoes = sc.nextInt();
 
-        while( numeroDeinteracoes != 0 ){
-            
-            /* .... */
+        while (numeroDeinteracoes != 0) {
+
+            String casoDeeste = sc2.nextLine();
+            String[] splitCaso = casoDeeste.split(" ");
+
+            System.out.println(Arrays.toString(splitCaso));
 
             numeroDeinteracoes--;
-        }
 
+            switch (splitCaso[3]) {
+                case "+": {
+
+                    // index -- 0 , 1, .2, 3, .4, 5, 6
+                    // Array - [n1, /, d1, +, n2, /, d2]
+                    // Soma: (N1*D2 + N2*D1) / (D1*D2)
+
+                    int numerador = Integer.parseInt(splitCaso[0]) * Integer.parseInt(splitCaso[6])
+                            + Integer.parseInt(splitCaso[4]) * Integer.parseInt(splitCaso[2]);
+
+                    int denominador = Integer.parseInt(splitCaso[2]) * Integer.parseInt(splitCaso[6]);
+
+                    int maximoDivisorComun = mdc(numerador, denominador);
+
+                    numerador /= maximoDivisorComun;
+                    denominador /= maximoDivisorComun;
+
+                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
+
+                    break;
+                }
+                case "-": {
+
+                    // index ------ 0 , 1, .2, 3, .4, 5, 6
+                    // Array ----- [n1, /, d1, +, n2, /, d2]
+                    // Subtração : (N1*D2 - N2*D1) / (D1*D2)
+
+                    int numerador = Integer.parseInt(splitCaso[0]) * Integer.parseInt(splitCaso[6])
+                            - Integer.parseInt(splitCaso[4]) * Integer.parseInt(splitCaso[2]);
+
+                    int denominador = Integer.parseInt(splitCaso[2]) * Integer.parseInt(splitCaso[6]);
+
+                    int maximoDivisorComun = mdc(numerador, denominador);
+
+                    numerador /= maximoDivisorComun;
+                    denominador /= maximoDivisorComun;
+
+                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
+
+                    break;
+                }
+                case "*": {
+                    // index ------ 0 , 1, .2, 3, .4, 5, 6
+                    // Array ------[n1, /, d1, +, n2, /, d2]
+                    // Multiplicação: (N1*N2) / (D1*D2)
+
+                    break;
+                }
+                case "/": {
+
+                    break;
+                }
+
+                default:
+                    break;
+            }
+        }
     }
 
-    public int mdc(int dividendo, int divisor) {
+    public static int mdc(int dividendo, int divisor) {
 
         int r = 1;
         while (r != 0) {
@@ -100,7 +161,9 @@ public class TDA_Racional {
             if (r == 0) {
 
                 return divisor;
+
             } else {
+
                 dividendo = divisor;
                 divisor = r;
             }
