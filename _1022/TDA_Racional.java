@@ -90,19 +90,26 @@ public class TDA_Racional {
 
             System.out.println(Arrays.toString(splitCaso));
 
+            int n1 = Integer.parseInt(splitCaso[0]);
+            int n2 = Integer.parseInt(splitCaso[4]);
+            int d1 = Integer.parseInt(splitCaso[2]);
+            int d2 = Integer.parseInt(splitCaso[6]);
+            int numerador;
+            int denominador;
+
             numeroDeinteracoes--;
 
             switch (splitCaso[3]) {
+
                 case "+": {
 
                     // index -- 0 , 1, .2, 3, .4, 5, 6
                     // Array - [n1, /, d1, +, n2, /, d2]
                     // Soma: (N1*D2 + N2*D1) / (D1*D2)
 
-                    int numerador = Integer.parseInt(splitCaso[0]) * Integer.parseInt(splitCaso[6])
-                            + Integer.parseInt(splitCaso[4]) * Integer.parseInt(splitCaso[2]);
+                    numerador = n1 * d2 + n2 * d1;
 
-                    int denominador = Integer.parseInt(splitCaso[2]) * Integer.parseInt(splitCaso[6]);
+                    denominador = d1 * d2;
 
                     int maximoDivisorComun = mdc(numerador, denominador);
 
@@ -119,10 +126,9 @@ public class TDA_Racional {
                     // Array ----- [n1, /, d1, +, n2, /, d2]
                     // Subtração : (N1*D2 - N2*D1) / (D1*D2)
 
-                    int numerador = Integer.parseInt(splitCaso[0]) * Integer.parseInt(splitCaso[6])
-                            - Integer.parseInt(splitCaso[4]) * Integer.parseInt(splitCaso[2]);
+                    numerador = ((n1 * d2) - (n2 * d1));
 
-                    int denominador = Integer.parseInt(splitCaso[2]) * Integer.parseInt(splitCaso[6]);
+                    denominador = (d1 * d2);
 
                     int maximoDivisorComun = mdc(numerador, denominador);
 
@@ -138,9 +144,35 @@ public class TDA_Racional {
                     // Array ------[n1, /, d1, +, n2, /, d2]
                     // Multiplicação: (N1*N2) / (D1*D2)
 
+                    numerador = (n1 * n2);
+
+                    denominador = (d1 * d2);
+
+                    int maximoDivisorComun = mdc(numerador, denominador);
+
+                    numerador /= maximoDivisorComun;
+                    denominador /= maximoDivisorComun;
+
+                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
+
                     break;
                 }
                 case "/": {
+
+                    // index ------ 0 , 1, .2, 3, .4, 5, 6
+                    // Array ------[n1, /, d1, +, n2, /, d2]
+                    // Divisão: (N1/D1) / (N2/D2), ou seja (N1*D2)/(N2*D1)
+
+                    numerador = (n1 * d2);
+
+                    denominador = (n2 * d1);
+
+                    int maximoDivisorComun = mdc(numerador, denominador);
+
+                    numerador /= maximoDivisorComun;
+                    denominador /= maximoDivisorComun;
+
+                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
 
                     break;
                 }
