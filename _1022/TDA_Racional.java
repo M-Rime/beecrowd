@@ -86,9 +86,10 @@ public class TDA_Racional {
         while (numeroDeinteracoes != 0) {
 
             String casoDeeste = sc2.nextLine();
-            String[] splitCaso = casoDeeste.split(" ");
 
-            System.out.println(Arrays.toString(splitCaso));
+            String[] splitCaso = new String[8];
+
+            splitCaso = casoDeeste.split(" ");
 
             int n1 = Integer.parseInt(splitCaso[0]);
             int n2 = Integer.parseInt(splitCaso[4]);
@@ -96,6 +97,7 @@ public class TDA_Racional {
             int d2 = Integer.parseInt(splitCaso[6]);
             int numerador;
             int denominador;
+            int maximoDivisorComun;
 
             numeroDeinteracoes--;
 
@@ -111,12 +113,19 @@ public class TDA_Racional {
 
                     denominador = d1 * d2;
 
-                    int maximoDivisorComun = mdc(numerador, denominador);
+                    System.out.print(numerador + "/" + denominador);
+
+                    maximoDivisorComun = mdc(numerador, denominador);
 
                     numerador /= maximoDivisorComun;
                     denominador /= maximoDivisorComun;
 
-                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
+                    System.out.println(" = " + numerador + "/" + denominador);
+
+                    if (denominador < 0) {
+                        numerador *= -1;
+                        denominador *= -1;
+                    }
 
                     break;
                 }
@@ -130,12 +139,19 @@ public class TDA_Racional {
 
                     denominador = (d1 * d2);
 
-                    int maximoDivisorComun = mdc(numerador, denominador);
+                    System.out.print(numerador + "/" + denominador);
+
+                    maximoDivisorComun = mdc(numerador, denominador);
 
                     numerador /= maximoDivisorComun;
                     denominador /= maximoDivisorComun;
 
-                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
+                    if (denominador < 0) {
+                        numerador *= -1;
+                        denominador *= -1;
+                    }
+
+                    System.out.println(" = " + numerador + "/" + denominador);
 
                     break;
                 }
@@ -148,13 +164,18 @@ public class TDA_Racional {
 
                     denominador = (d1 * d2);
 
-                    int maximoDivisorComun = mdc(numerador, denominador);
+                    System.out.print(numerador + "/" + denominador);
+
+                    maximoDivisorComun = mdc(numerador, denominador);
 
                     numerador /= maximoDivisorComun;
                     denominador /= maximoDivisorComun;
+                    if (denominador < 0) {
+                        numerador *= -1;
+                        denominador *= -1;
+                    }
 
-                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
-
+                    System.out.println(" = " + numerador + "/" + denominador);
                     break;
                 }
                 case "/": {
@@ -167,13 +188,19 @@ public class TDA_Racional {
 
                     denominador = (n2 * d1);
 
-                    int maximoDivisorComun = mdc(numerador, denominador);
+                    System.out.print(numerador + "/" + denominador);
+
+                    maximoDivisorComun = mdc(numerador, denominador);
+
+                    if (denominador < 0) {
+                        numerador *= -1;
+                        denominador *= -1;
+                    }
 
                     numerador /= maximoDivisorComun;
                     denominador /= maximoDivisorComun;
 
-                    System.out.println("N :" + numerador + "" + "\n" + "D :" + denominador);
-
+                    System.out.println(" = " + numerador + "/" + denominador);
                     break;
                 }
 
